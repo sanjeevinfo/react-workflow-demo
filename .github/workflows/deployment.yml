@@ -15,6 +15,7 @@ jobs:
       - name: Run Tests
         run: npm test
   deployment:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -27,5 +28,5 @@ jobs:
         run: npm ci
       - name: Build Project
         run: npm run build
-      - name: Deploying
-        run: echo "Deploying..."
+      - name: Deploy
+        run: echo "Deploying Application..."
